@@ -10,15 +10,15 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-public class ErrorInterceptor implements Interceptor {
+public final class ErrorInterceptor implements Interceptor {
   private static final Logger logger = LoggerFactory.getLogger(ErrorInterceptor.class);
   private static final Gson gson = new Gson();
 
   @Override
-  public Response intercept(Chain chain) throws IOException {
-    Response response = chain.proceed(chain.request());
+  public Response intercept(final Chain chain) throws IOException {
+    final Response response = chain.proceed(chain.request());
     if(!response.isSuccessful()) {
-      OandaError error = gson.fromJson(response.body().string(), OandaError.class);
+      final OandaError error = gson.fromJson(response.body().string(), OandaError.class);
       logger.error(error.getMessage());
       throw new OandaException(error);
     } else {
