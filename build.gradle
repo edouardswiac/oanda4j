@@ -47,13 +47,18 @@ bintray {
 
     pkg {
         repo = 'generic'
-        name = 'oanda4j'
-        userOrg = 'edouardswiac'
+        name = 'Oanda4j'
         licenses = ['Apache-2.0']
+        desc = "Oanda4j is a java client for Oanda's REST API"
+        websiteUrl = 'https://github.com/edouardswiac/oanda4j'
+        issueTrackerUrl = 'https://github.com/edouardswiac/oanda4j/issues'
         vcsUrl = 'https://github.com/edouardswiac/oanda4j.git'
+        labels = ["oanda", "forex"]
+        publicDownloadNumbers = true
 
+        githubRepo = "edouardswiac/oanda4j"
         version {
-            name = 'Oanda4j'
+            name = project.version
             desc = 'Oanda4j'
             released  = new Date()
             vcsTag = project.version
