@@ -1,3 +1,1 @@
-A Java client to Oanda's REST API.
-
-TBD
+A Java client for Oanda's REST API.
