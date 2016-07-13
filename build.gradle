@@ -3,7 +3,6 @@ plugins {
 }
 
 group 'com.github.edouardswiac'
-version '0.1-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'maven-publish'
@@ -22,7 +21,6 @@ publishing {
 
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 dependencies {
