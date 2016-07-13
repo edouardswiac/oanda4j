@@ -6,12 +6,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public final class OandaClient {
 
-  private final OandaService oandaService;
+  private OandaService oandaService;
 
   public OandaClient(OandaCredentials oandaCredentials) {
     OkHttpClient client = new OkHttpClient.Builder()
             .addInterceptor(new AuthorizationInterceptor(oandaCredentials.getToken()))
             .addInterceptor(new LoggingInterceptor())
+            .addInterceptor(new ErrorInterceptor())
+            .addInterceptor(new ContentTypeInterceptor())
             .build();
 
     Retrofit retrofit = new Retrofit.Builder()

@@ -2,11 +2,11 @@ package com.github.edouardswiac.oanda4j.models;
 
 import java.util.List;
 
-public class Instruments {
+public class InstrumentList {
 
   private final List<Instrument> instruments;
 
-  public Instruments(List<Instrument> instruments) {
+  public InstrumentList(List<Instrument> instruments) {
     this.instruments = instruments;
   }
 
@@ -16,7 +16,7 @@ public class Instruments {
 
   @Override
   public String toString() {
-    final StringBuffer sb = new StringBuffer("Instruments{");
+    final StringBuffer sb = new StringBuffer("InstrumentList{");
     sb.append("instruments=").append(instruments);
     sb.append('}');
     return sb.toString();

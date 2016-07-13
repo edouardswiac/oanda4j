@@ -8,43 +8,44 @@ import java.util.Map;
 
 public interface OandaService {
   @GET("v1/instruments")
-  Call<Instruments> getInstrumentList(@QueryMap Map<String, String> args);
+  Call<InstrumentList> getInstrumentList(@QueryMap Map<String, String> args);
 
   @GET("v1/candles")
-  Call<Candles<MidpointCandle>> getMidpointCandles(@QueryMap Map<String, String> args);
+  Call<CandleList<MidpointCandle>> getMidpointCandles(@QueryMap Map<String, String> args);
 
   @GET("v1/candles")
-  Call<Candles<BidAskCandle>> getBidAskCandles(@QueryMap Map<String, String> args);
+  Call<CandleList<BidAskCandle>> getBidAskCandles(@QueryMap Map<String, String> args);
 
   @GET("v1/accounts/{accountId}/orders/{orderId}")
-  Call<Orders> getOrder(@Path("accountId") String accountId, @Path("orderId") String orderId, @QueryMap Map<String, String> args);
+  Call<OrderList> getOrder(@Path("accountId") String accountId, @Path("orderId") String orderId, @QueryMap Map<String, String> args);
 
   @GET("v1/accounts/{accountId}/orders")
-  Call<Orders> getOrders(@Path("accountId") String accountId, @QueryMap Map<String, String> args);
+  Call<OrderList> getOrders(@Path("accountId") String accountId, @QueryMap Map<String, String> args);
 
+  @FormUrlEncoded
   @POST("v1/accounts/{accountId}/orders")
-  Call<Orders> createOrder(@Path("accountId") String accountId, @Body Order order);
+  Call<OrderResponse> createOrder(@Path("accountId") String accountId, @FieldMap Map<String, String> fieldMap);
 
   @PATCH("v1/accounts/{accountId}/orders/{orderId}")
-  Call<Orders> updateOrder(@Path("accountId") String accountId, @Path("orderId") String orderId, @Body Order order);
+  Call<OrderList> updateOrder(@Path("accountId") String accountId, @Path("orderId") String orderId, @Body TradeEntity order);
 
   @DELETE("v1/accounts/{accountId}/orders/{orderId}")
-  Call<Order> closeOrder(@Path("accountId") String accountId, @Path("orderId") String orderId);
+  Call<TradeEntity> closeOrder(@Path("accountId") String accountId, @Path("orderId") String orderId);
 
   @GET("v1/accounts/{accountId}/trades")
-  Call<Trades> getOpenTrades(@Path("accountId") String accountId, @QueryMap Map<String, String> args);
+  Call<TradeCollection> getOpenTrades(@Path("accountId") String accountId, @QueryMap Map<String, String> args);
 
   @GET("v1/accounts/{accountId}/trades/{tradeId}")
-  Call<Trade> getTrade(@Path("accountId") String accountId, @Path("tradeId") String tradeId, @QueryMap Map<String, String> args);
+  Call<TradeEntity> getTrade(@Path("accountId") String accountId, @Path("tradeId") String tradeId, @QueryMap Map<String, String> args);
 
   @PATCH("v1/accounts/{accountId}/trades/{tradeId}")
-  Call<Trade> updateTrade(@Path("accountId") String accountId, @Path("tradeId") String tradeId, @Body Trade trade);
+  Call<TradeEntity> updateTrade(@Path("accountId") String accountId, @Path("tradeId") String tradeId, @Body TradeEntity trade);
 
-  @PATCH("v1/accounts/{accountId}/trades/{tradeId}")
-  Call<Trade> closeTrade(@Path("accountId") String accountId, @Path("tradeId") String tradeId);
+  @DELETE("v1/accounts/{accountId}/trades/{tradeId}")
+  Call<TradeEntity> closeTrade(@Path("accountId") String accountId, @Path("tradeId") String tradeId);
 
   @GET("v1/accounts/positions")
-  Call<Positions> getOpenPositions(@Path("accountId") String accountId);
+  Call<PositionList> getOpenPositions(@Path("accountId") String accountId);
 
   @GET("v1/accounts/positions/{instrument}")
   Call<Position> getPositionForInstrument(@Path("accountId") String accountId, @Path("instrument") String instrument);

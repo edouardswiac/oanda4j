@@ -31,7 +31,7 @@ public final class Instrument {
 
   @Override
   public String toString() {
-    final StringBuffer sb = new StringBuffer("Instrument{");
+    final StringBuffer sb = new StringBuffer("CurrencyPair{");
     sb.append("displayName='").append(displayName).append('\'');
     sb.append(", instrument='").append(instrument).append('\'');
     sb.append(", pip='").append(pip).append('\'');
