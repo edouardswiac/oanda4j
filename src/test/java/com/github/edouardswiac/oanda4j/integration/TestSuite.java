@@ -1,5 +1,4 @@
-package com.github.edouardswiac.oanda4j;
-
+package com.github.edouardswiac.oanda4j.integration;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -10,6 +9,5 @@ import org.junit.runners.Suite;
   RatesTest.class,
   TradesTest.class
 })
-public class TestSuite {
 
-}
+public class TestSuite { }

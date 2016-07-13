@@ -1,10 +1,10 @@
 package com.github.edouardswiac.oanda4j.models;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.Instant;
 
 public class BidAskCandle implements Candle {
-  private final Date time;
+  private final Instant time;
   private final BigDecimal openBid;
   private final BigDecimal openAsk;
   private final BigDecimal highBid;
@@ -16,7 +16,7 @@ public class BidAskCandle implements Candle {
   private final long volume;
   private final boolean complete;
 
-  public BidAskCandle(Date time, BigDecimal openBid, BigDecimal openAsk, BigDecimal highBid, BigDecimal highAsk, BigDecimal lowBid, BigDecimal lowAsk, BigDecimal closeBid, BigDecimal closeAsk, long volume, boolean complete) {
+  public BidAskCandle(Instant time, BigDecimal openBid, BigDecimal openAsk, BigDecimal highBid, BigDecimal highAsk, BigDecimal lowBid, BigDecimal lowAsk, BigDecimal closeBid, BigDecimal closeAsk, long volume, boolean complete) {
     this.time = time;
     this.openBid = openBid;
     this.openAsk = openAsk;
@@ -30,7 +30,7 @@ public class BidAskCandle implements Candle {
     this.complete = complete;
   }
 
-  public Date getTime() {
+  public Instant getTime() {
     return time;
   }
 

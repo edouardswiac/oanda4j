@@ -1,8 +1,7 @@
-package com.github.edouardswiac.oanda4j;
+package com.github.edouardswiac.oanda4j.integration;
 
 
 import com.github.edouardswiac.oanda4j.models.TradeCollection;
-
 import org.junit.Test;
 import retrofit2.Call;
 import retrofit2.Response;

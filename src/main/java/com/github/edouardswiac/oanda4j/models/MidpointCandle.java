@@ -1,10 +1,10 @@
 package com.github.edouardswiac.oanda4j.models;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.Instant;
 
 public final class MidpointCandle implements Candle {
-  private final Date time; //RFC339 format
+  private final Instant time;
   private final BigDecimal openMid;
   private final BigDecimal highMid;
   private final BigDecimal lowMid;
@@ -12,7 +12,7 @@ public final class MidpointCandle implements Candle {
   private final double volume;
   private final boolean complete;
 
-  public MidpointCandle(Date time, BigDecimal openMid, BigDecimal highMid, BigDecimal lowMid, BigDecimal closeMid, double volume, boolean complete) {
+  public MidpointCandle(Instant time, BigDecimal openMid, BigDecimal highMid, BigDecimal lowMid, BigDecimal closeMid, double volume, boolean complete) {
     this.time = time;
     this.openMid = openMid;
     this.highMid = highMid;
@@ -22,7 +22,7 @@ public final class MidpointCandle implements Candle {
     this.complete = complete;
   }
 
-  public Date getTime() {
+  public Instant getTime() {
     return time;
   }
 

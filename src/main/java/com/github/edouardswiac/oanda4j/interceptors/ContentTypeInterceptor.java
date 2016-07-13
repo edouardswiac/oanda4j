@@ -1,4 +1,4 @@
-package com.github.edouardswiac.oanda4j;
+package com.github.edouardswiac.oanda4j.interceptors;
 
 import okhttp3.Interceptor;
 import okhttp3.Request;

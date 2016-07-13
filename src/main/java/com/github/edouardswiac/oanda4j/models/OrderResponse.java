@@ -3,12 +3,12 @@ package com.github.edouardswiac.oanda4j.models;
 import com.github.edouardswiac.oanda4j.enums.CurrencyPair;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Collection;
-import java.util.Date;
 
 public class OrderResponse {
   private CurrencyPair instrument;
-  private Date date;
+  private Instant date;
   private BigDecimal price;
   private TradeEntity tradeOpened;
   private TradeEntity orderOpened;
@@ -22,7 +22,7 @@ public class OrderResponse {
     return instrument;
   }
 
-  public Date getDate() {
+  public Instant getDate() {
     return date;
   }
 
@@ -44,5 +44,19 @@ public class OrderResponse {
 
   public TradeEntity getOrderOpened() {
     return orderOpened;
+  }
+
+  @Override
+  public String toString() {
+    final StringBuffer sb = new StringBuffer("OrderResponse{");
+    sb.append("instrument=").append(instrument);
+    sb.append(", date=").append(date);
+    sb.append(", price=").append(price);
+    sb.append(", tradeOpened=").append(tradeOpened);
+    sb.append(", orderOpened=").append(orderOpened);
+    sb.append(", tradesClosed=").append(tradesClosed);
+    sb.append(", tradeReduced=").append(tradeReduced);
+    sb.append('}');
+    return sb.toString();
   }
 }

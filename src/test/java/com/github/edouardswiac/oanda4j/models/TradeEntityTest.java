@@ -7,17 +7,18 @@ import com.google.common.collect.Maps;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Map;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TradeEntityTest {
 
   @Test
   public void testFieldMapWithSomeFields() {
     String id = "123";
-    Date expiryDate = new Date();
+    Instant expiryDate = Instant.now().plus(Duration.ofHours(5));
     BigDecimal price = new BigDecimal("1.23456");
 
     Map<String, String> expectedFields = Maps.newHashMap();
@@ -42,12 +43,13 @@ public class TradeEntityTest {
     Integer units = 2;
     TradeSide side = TradeSide.BUY;
     OrderType orderType = OrderType.MARKET;
-    Date time = new Date();
+    Instant time = Instant.now();
+    Instant expiry = Instant.now().plus(Duration.ofDays(5));
+
     BigDecimal price = new BigDecimal(2.456);
     BigDecimal takeProfit = new BigDecimal(2);
     BigDecimal profit = new BigDecimal(2.45);
     BigDecimal stopLoss = new BigDecimal(2.4564);
-    Date expiry = new Date();
     BigDecimal upperBound = new BigDecimal(2.6456);
     BigDecimal lowerBound = new BigDecimal(1.456);
     BigDecimal trailingStop = new BigDecimal("0.001");
@@ -75,11 +77,11 @@ public class TradeEntityTest {
             .setSide(side)
             .setOrderType(orderType)
             .setTime(time)
+            .setExpiry(expiry)
             .setPrice(price)
             .setTakeProfit(takeProfit)
             .setProfit(profit)
             .setStopLoss(stopLoss)
-            .setExpiry(expiry)
             .setUpperBound(upperBound)
             .setLowerBound(lowerBound)
             .setTrailingStop(trailingStop)

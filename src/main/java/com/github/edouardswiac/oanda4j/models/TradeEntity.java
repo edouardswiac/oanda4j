@@ -5,7 +5,7 @@ import com.github.edouardswiac.oanda4j.enums.OrderType;
 import com.github.edouardswiac.oanda4j.enums.TradeSide;
 
 import java.math.BigDecimal;
-import java.util.Date;
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,12 +19,13 @@ public final class TradeEntity {
   // should be type but name can conflict with other JVM languages
   private OrderType orderType;
 
-  private Date time;
+  private Instant time;
+  private Instant expiry;
+
   private BigDecimal price;
   private BigDecimal takeProfit;
   private BigDecimal profit;
   private BigDecimal stopLoss;
-  private Date expiry;
   private BigDecimal upperBound;
   private BigDecimal lowerBound;
   private BigDecimal trailingStop;
@@ -35,12 +36,12 @@ public final class TradeEntity {
           Integer units,
           TradeSide side,
           OrderType orderType,
-          Date time,
+          Instant time,
           BigDecimal price,
           BigDecimal takeProfit,
           BigDecimal profit,
           BigDecimal stopLoss,
-          Date expiry,
+          Instant expiry,
           BigDecimal upperBound,
           BigDecimal lowerBound,
           BigDecimal trailingStop) {
@@ -80,7 +81,7 @@ public final class TradeEntity {
     return orderType;
   }
 
-  public Date getTime() {
+  public Instant getTime() {
     return time;
   }
 
@@ -100,7 +101,7 @@ public final class TradeEntity {
     return stopLoss;
   }
 
-  public Date getExpiry() {
+  public Instant getExpiry() {
     return expiry;
   }
 
@@ -141,12 +142,12 @@ public final class TradeEntity {
     private Integer units;
     private TradeSide side;
     private OrderType orderType;
-    private Date time;
+    private Instant time;
     private BigDecimal price;
     private BigDecimal takeProfit;
     private BigDecimal profit;
     private BigDecimal stopLoss;
-    private Date expiry;
+    private Instant expiry;
     private BigDecimal upperBound;
     private BigDecimal lowerBound;
     private BigDecimal trailingStop;
@@ -176,7 +177,7 @@ public final class TradeEntity {
       return this;
     }
 
-    public Builder setTime(Date time) {
+    public Builder setTime(Instant time) {
       this.time = time;
       return this;
     }
@@ -201,7 +202,7 @@ public final class TradeEntity {
       return this;
     }
 
-    public Builder setExpiry(Date expiry) {
+    public Builder setExpiry(Instant expiry) {
       this.expiry = expiry;
       return this;
     }

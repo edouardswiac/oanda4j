@@ -1,8 +1,11 @@
-package com.github.edouardswiac.oanda4j;
+package com.github.edouardswiac.oanda4j.integration;
 
 import com.github.edouardswiac.oanda4j.enums.CurrencyPair;
 import com.github.edouardswiac.oanda4j.enums.Granularity;
-import com.github.edouardswiac.oanda4j.models.*;
+import com.github.edouardswiac.oanda4j.models.BidAskCandle;
+import com.github.edouardswiac.oanda4j.models.CandleList;
+import com.github.edouardswiac.oanda4j.models.InstrumentList;
+import com.github.edouardswiac.oanda4j.models.MidpointCandle;
 import org.junit.Test;
 import retrofit2.Call;
 import retrofit2.Response;

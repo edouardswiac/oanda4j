@@ -1,12 +1,14 @@
 package com.github.edouardswiac.oanda4j.models;
 
+import com.github.edouardswiac.oanda4j.enums.CurrencyPair;
+
 public final class Instrument {
   private final String displayName;
-  private final String instrument;
+  private final CurrencyPair instrument;
   private final String pip;
   private final int maxTradeUnits;
 
-  public Instrument(String displayName, String instrument, String pip, int maxTradeUnits) {
+  public Instrument(String displayName, CurrencyPair instrument, String pip, int maxTradeUnits) {
     this.displayName = displayName;
     this.instrument = instrument;
     this.pip = pip;
@@ -17,7 +19,7 @@ public final class Instrument {
     return displayName;
   }
 
-  public String getInstrument() {
+  public CurrencyPair getInstrument() {
     return instrument;
   }
 

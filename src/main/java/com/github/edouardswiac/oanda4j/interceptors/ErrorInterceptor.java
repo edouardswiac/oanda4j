@@ -1,5 +1,6 @@
-package com.github.edouardswiac.oanda4j;
+package com.github.edouardswiac.oanda4j.interceptors;
 
+import com.github.edouardswiac.oanda4j.OandaException;
 import com.github.edouardswiac.oanda4j.models.OandaError;
 import com.google.gson.Gson;
 import okhttp3.Interceptor;

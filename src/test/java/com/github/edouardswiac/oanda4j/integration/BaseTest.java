@@ -1,18 +1,20 @@
-package com.github.edouardswiac.oanda4j;
+package com.github.edouardswiac.oanda4j.integration;
 
 
+import com.github.edouardswiac.oanda4j.OandaClient;
+import com.github.edouardswiac.oanda4j.OandaCredentials;
 import org.junit.BeforeClass;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class BaseTest {
+public class BaseTest {
   static String accountId;
   static String token;
   static OandaCredentials oandaCredentials;
   static OandaClient oandaClient;
 
-  static final Map<String, String> emptyArgs = new HashMap<String, String>();
+  static final Map<String, String> emptyArgs = new HashMap<>();
 
   @BeforeClass
   public static void init() {
