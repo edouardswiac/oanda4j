@@ -73,3 +73,4 @@ crashlytics-build.properties
 fabric.properties
 
 *.ipr
+credentials.sh
