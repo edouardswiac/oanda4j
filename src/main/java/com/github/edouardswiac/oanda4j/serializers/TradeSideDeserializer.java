@@ -8,7 +8,7 @@ import com.google.gson.JsonParseException;
 
 import java.lang.reflect.Type;
 
-public class TradeSideDeserializer implements JsonDeserializer<TradeSide> {
+public final class TradeSideDeserializer implements JsonDeserializer<TradeSide> {
   @Override
   public TradeSide deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
     return TradeSide.valueOf(json.getAsString().toUpperCase());

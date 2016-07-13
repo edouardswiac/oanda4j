@@ -5,8 +5,8 @@ public final class OandaCredentials {
   private final String token;
   private final String endpoint;
 
-  public static final String PRACTICE_ENDPOINT =  "https://api-fxpractice.oanda.com";;
-  public static final String PRODUCTION_ENDPOINT = "";
+  public static final String PRACTICE_ENDPOINT =  "https://api-fxpractice.oanda.com";
+  public static final String PRODUCTION_ENDPOINT = "https://api-fxtrade.oanda.com";
 
 
   public OandaCredentials(String accountId, String token, String endpoint) {

@@ -61,8 +61,6 @@ public class OrdersTest extends BaseTest {
 
   @Test
   public void testCreateOpenOrder() throws Exception {
-    ZonedDateTime utc = ZonedDateTime.now(ZoneOffset.UTC);
-
     TradeEntity order = new TradeEntity.Builder()
             .setInstrument(CurrencyPair.USD_CZK)
             .setOrderType(OrderType.LIMIT)

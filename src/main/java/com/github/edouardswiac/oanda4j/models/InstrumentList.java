@@ -2,7 +2,7 @@ package com.github.edouardswiac.oanda4j.models;
 
 import java.util.List;
 
-public class InstrumentList {
+public final class InstrumentList {
 
   private final List<Instrument> instruments;
 

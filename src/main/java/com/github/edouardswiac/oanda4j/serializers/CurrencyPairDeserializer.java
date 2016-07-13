@@ -8,7 +8,7 @@ import com.google.gson.JsonParseException;
 
 import java.lang.reflect.Type;
 
-public class CurrencyPairDeserializer implements JsonDeserializer<CurrencyPair> {
+public final class CurrencyPairDeserializer implements JsonDeserializer<CurrencyPair> {
   @Override
   public CurrencyPair deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
     return CurrencyPair.valueOf(json.getAsString());

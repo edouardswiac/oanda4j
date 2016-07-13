@@ -10,19 +10,18 @@ public final class AuthorizationInterceptor implements Interceptor {
 
   private final String oandaToken;
 
-  public AuthorizationInterceptor(String oandaToken) {
+  public AuthorizationInterceptor(final String oandaToken) {
     this.oandaToken = oandaToken;
   }
 
   @Override
-  public Response intercept(Interceptor.Chain chain) throws IOException {
-    Request original = chain.request();
+  public Response intercept(final Interceptor.Chain chain) throws IOException {
+    final Request original = chain.request();
 
-    // Request customization: add request headers
-    Request.Builder requestBuilder = original.newBuilder()
+    final Request.Builder requestBuilder = original.newBuilder()
             .addHeader("Authorization", String.format("Bearer %s", oandaToken));
 
-    Request request = requestBuilder.build();
+    final Request request = requestBuilder.build();
     return chain.proceed(request);
   }
 }

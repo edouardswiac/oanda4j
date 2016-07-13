@@ -21,10 +21,10 @@ import java.time.Instant;
 
 public final class OandaClient {
 
-  private OandaService oandaService;
+  private final OandaService oandaService;
   private final String accountId;
 
-  public OandaClient(OandaCredentials oandaCredentials) {
+  public OandaClient(final OandaCredentials oandaCredentials) {
     accountId = oandaCredentials.getAccountId();
     HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
     logging.setLevel(HttpLoggingInterceptor.Level.BODY);

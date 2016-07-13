@@ -11,24 +11,24 @@ import java.util.Map;
 
 public final class TradeEntity {
 
-  private String id;
+  private final String id;
 
-  private CurrencyPair instrument;
-  private Integer units;
-  private TradeSide side;
+  private final CurrencyPair instrument;
+  private final Integer units;
+  private final TradeSide side;
   // should be type but name can conflict with other JVM languages
-  private OrderType orderType;
+  private final OrderType orderType;
 
-  private Instant time;
-  private Instant expiry;
+  private final Instant time;
+  private final Instant expiry;
 
-  private BigDecimal price;
-  private BigDecimal takeProfit;
-  private BigDecimal profit;
-  private BigDecimal stopLoss;
-  private BigDecimal upperBound;
-  private BigDecimal lowerBound;
-  private BigDecimal trailingStop;
+  private final BigDecimal price;
+  private final BigDecimal takeProfit;
+  private final BigDecimal profit;
+  private final BigDecimal stopLoss;
+  private final BigDecimal upperBound;
+  private final BigDecimal lowerBound;
+  private final BigDecimal trailingStop;
 
   protected TradeEntity(
           String id,

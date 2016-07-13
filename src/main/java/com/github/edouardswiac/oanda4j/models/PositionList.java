@@ -2,7 +2,7 @@ package com.github.edouardswiac.oanda4j.models;
 
 import java.util.Collection;
 
-public class PositionList {
+public final class PositionList {
   private final Collection<Position> positions;
 
   public PositionList(Collection<Position> positions) {

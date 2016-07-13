@@ -5,7 +5,7 @@ import com.github.edouardswiac.oanda4j.enums.TradeSide;
 
 import java.math.BigDecimal;
 
-public class Position {
+public final class Position {
   private final TradeSide tradeSide;
   private final CurrencyPair currencyPair;
   private final int units;

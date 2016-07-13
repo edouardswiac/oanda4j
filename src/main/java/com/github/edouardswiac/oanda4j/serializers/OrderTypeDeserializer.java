@@ -8,7 +8,7 @@ import com.google.gson.JsonParseException;
 
 import java.lang.reflect.Type;
 
-public class OrderTypeDeserializer implements JsonDeserializer<OrderType> {
+public final class OrderTypeDeserializer implements JsonDeserializer<OrderType> {
   @Override
   public OrderType deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
     return OrderType.valueOf(json.getAsString().toUpperCase());

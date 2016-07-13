@@ -1,13 +1,13 @@
 package com.github.edouardswiac.oanda4j.models;
 
-import java.util.List;
+import java.util.Collection;
 
-public class CandleList<T extends Candle> {
+public final class CandleList<T extends Candle> {
   private final String instrument;
   private final String granularity;
-  private final List<T> candles;
+  private final Collection<T> candles;
 
-  public CandleList(String instrument, String granularity, List<T> candles) {
+  public CandleList(String instrument, String granularity, Collection<T> candles) {
     this.instrument = instrument;
     this.granularity = granularity;
     this.candles = candles;
@@ -21,7 +21,7 @@ public class CandleList<T extends Candle> {
     return granularity;
   }
 
-  public List<T> getCandles() {
+  public Collection<T> getCandles() {
     return candles;
   }
 

@@ -6,16 +6,23 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.Collection;
 
-public class OrderResponse {
-  private CurrencyPair instrument;
-  private Instant date;
-  private BigDecimal price;
-  private TradeEntity tradeOpened;
-  private TradeEntity orderOpened;
-  private Collection<TradeEntity> tradesClosed;
-  private TradeEntity tradeReduced;
+public final class OrderResponse {
+  private final CurrencyPair instrument;
+  private final Instant date;
+  private final BigDecimal price;
+  private final TradeEntity tradeOpened;
+  private final TradeEntity orderOpened;
+  private final Collection<TradeEntity> tradesClosed;
+  private final TradeEntity tradeReduced;
 
-  protected OrderResponse() {
+  public OrderResponse(CurrencyPair instrument, Instant date, BigDecimal price, TradeEntity tradeOpened, TradeEntity orderOpened, Collection<TradeEntity> tradesClosed, TradeEntity tradeReduced) {
+    this.instrument = instrument;
+    this.date = date;
+    this.price = price;
+    this.tradeOpened = tradeOpened;
+    this.orderOpened = orderOpened;
+    this.tradesClosed = tradesClosed;
+    this.tradeReduced = tradeReduced;
   }
 
   public CurrencyPair getInstrument() {

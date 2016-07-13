@@ -1,11 +1,15 @@
 package com.github.edouardswiac.oanda4j.models;
 
-public class OandaError {
-  private int code;
-  private String message;
-  private String moreInfo;
+public final class OandaError {
+  private final int code;
+  private final String message;
+  private final String moreInfo;
 
-  private OandaError() {}
+  public OandaError(int code, String message, String moreInfo) {
+    this.code = code;
+    this.message = message;
+    this.moreInfo = moreInfo;
+  }
 
   public int getCode() {
     return code;
